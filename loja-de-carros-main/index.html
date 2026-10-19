@@ -3,68 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - Carros</title>
+    <title>Acesso - Sistema de Carros</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+
     <div class="container">
-        <h1>CARROS</h1>
-        <p>Venha comprar o seu automóvel!</p>        
-        
-        <p>Qual veículo é da sua preferência, carro ou moto?</p>
-        <input type="text" id="veiculo" placeholder="Ex: Carro">        
-        <br><br>                
-        
-        <p>Escolha a faixa de valor:</p>
-        
-        <div class="faixa-valor">
-            <select id="minimo">
-                <option value="">Mínimo</option>
-                <option value="5000">5.000</option>
-                <option value="10000">10.000</option>
-                <option value="15000">15.000</option>
-                <option value="20000">20.000</option>
-                <option value="25000">25.000</option>
-                <option value="30000">30.000</option>
-                <option value="45000">45.000</option>
-            </select>
-            
-            <span>até</span>
-            
-            <select id="maximo">
-                <option value="">Máximo</option>
-                <option value="10000">10.000</option>
-                <option value="20000">20.000</option>
-                <option value="30000">30.000</option>
-                <option value="45000">45.000</option>
-                <option value="60000">60.000</option>
-                <option value="80000">80.000</option>
-            </select>
-        </div>
-        
+        <h1>SISTEMA DE CARROS</h1>
+        <p>Faça seu login para acessar a loja de automóveis</p>
         <br>
-        <button onclick="mostrarSolicitacao()">Enviar</button>
+
+        <input type="text" id="usuario" placeholder="Digite seu usuário">
+        <br><br>
+        <input type="password" id="senha" placeholder="Digite sua senha">
+        <br><br>
+
+        <button id="enviar">Entrar</button>
 
         <p id="resultado" style="margin-top: 20px; text-align: center; font-weight: bold;"></p>
     </div>
 
-    <script>
-        function mostrarSolicitacao() {
-            const veiculo = document.getElementById('veiculo').value;
-            const minimo = document.getElementById('minimo').value;
-            const maximo = document.getElementById('maximo').value;
-            const resultado = document.getElementById('resultado');
-
-            if (veiculo === "" || minimo === "" || maximo === "") {
-                resultado.textContent = "Por favor, preencha todos os campos!";
-                resultado.style.color = "#ff4d4d";
-                return;
-            }
-
-            resultado.style.color = "#00b09b";
-            resultado.textContent = `Você escolheu um(a) ${veiculo} de R$ ${minimo} até R$ ${maximo}.`;
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
