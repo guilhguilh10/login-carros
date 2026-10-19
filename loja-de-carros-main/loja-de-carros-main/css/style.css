@@ -7,6 +7,7 @@ body {
     min-height: 100vh;
     margin: 0;
 }
+
 .container {
     background-color: #ffffff;
     padding: 40px;
@@ -16,6 +17,7 @@ body {
     max-width: 420px; 
     box-sizing: border-box;
 }
+
 h1 {
     color: #1e3c72;
     margin-top: 0;
@@ -24,19 +26,22 @@ h1 {
     text-align: center;
     letter-spacing: 1px;
 }
+
 .container > p:first-of-type {
     color: #666666;
     text-align: center;
     margin-bottom: 25px;
     font-size: 14px;
 }
+
 p {
     color: #333333;
     font-weight: 600;
     font-size: 14px;
     margin-bottom: 8px;
 }
-input[type="text"], select {
+
+input[type="text"], input[type="password"] {
     width: 100%;
     padding: 12px 15px;
     border: 2px solid #e1e1e1;
@@ -46,26 +51,14 @@ input[type="text"], select {
     box-sizing: border-box;
     transition: all 0.3s ease; 
 }
-input[type="text"]:focus, select:focus {
+
+input[type="text"]:focus, input[type="password"]:focus {
     border-color: #2a5298;
     background-color: #ffffff;
     outline: none;
     box-shadow: 0 0 5px rgba(42, 82, 152, 0.3);
 }
 
-.faixa-valor {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.faixa-valor select {
-    flex: 1; 
-}
-span {
-    color: #666;
-    font-weight: bold;
-    font-size: 14px;
-}
 button {
     width: 100%;
     background: linear-gradient(135deg, #00b09b, #96c93d); 
@@ -79,10 +72,12 @@ button {
     transition: transform 0.2s ease, opacity 0.2s ease;
     margin-top: 10px;
 }
+
 button:hover {
     opacity: 0.9;
     transform: translateY(-2px); 
 }
+
 button:active {
     transform: translateY(0);
 }
