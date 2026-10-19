@@ -1,36 +1,31 @@
-// 1. Capturamos os elementos do HTML pelo ID
+
 const usuario = document.getElementById("usuario");
 const senha = document.getElementById("senha");
+const botaocadastrar = document.getElementById("enviar");
 const resultado = document.getElementById("resultado");
-const botaoEnviar = document.getElementById("enviar");
 
-// 2. Evento de clique no botão "Entrar"
-botaoEnviar.addEventListener("click", function(event) {
-    event.preventDefault(); // Impede a página de recarregar
+botaocadastrar.addEventListener("click", function(event) {
+    event.preventDefault(); 
 
-    // 3. Pegamos os valores digitados pelo usuário
-    const nomeUsuario = usuario.value;
-    const senhaDigitada = senha.value;
+    const nomeusuario = usuario.value;
+    const senhausuario = senha.value;
 
-    // 4. Validação: verifica se algum campo ficou vazio
-    if (nomeUsuario === "" || senhaDigitada === "") {
-        resultado.textContent = "Por favor, preencha todos os campos!";
-        resultado.style.color = "#ff4d4d"; // Vermelho
+    console.log(nomeusuario, senhausuario);
+
+    if (nomeusuario === "" || senhausuario === "") {
+        alert("Preencha todos os campos!");
+        resultado.textContent = "Preencha todos os campos!";
+        resultado.style.color = "#ff4d4d";
         return;
     }
 
-    // 5. Verificação das credenciais (aluno / 2026)
-    if (nomeUsuario === "aluno" && senhaDigitada === "2026") {
-        // --- Teste 1: Login Correto e Senha Correta ---
-        resultado.textContent = "Bem-vindo ao sistema!";
-        resultado.style.color = "#00b09b"; // Verde
+    if (nomeusuario === "aluno" && senhausuario === "2026") {
         alert("Bem-vindo ao sistema!");
+        resultado.textContent = "Bem-vindo ao sistema!";
+        resultado.style.color = "#00b09b";
     } else {
-        // --- Testes de Erro: Usuário/Senha Incorretos ---
-        resultado.textContent = "Acesso negado!";
-        resultado.style.color = "#ff4d4d"; // Vermelho
         alert("Acesso negado!");
+        resultado.textContent = "Acesso negado!";
+        resultado.style.color = "#ff4d4d";
     }
-
-    console.log(`Tentativa de Login - Usuário: ${nomeUsuario}`);
 });
